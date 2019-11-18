@@ -89,14 +89,22 @@ class SudokuView: UIView {
     }
     
     func reset() {
+        self.originBoard = [
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        ]
+        self.createBoardValue()
         for i in 0...8 {
             for j in 0...8 {
+                self.boardTextField[i][j].text = ""
                 self.boardTextField[i][j].textColor = UIColor.black
-                if self.originBoard[i][j] == 0 {
-                    self.boardTextField[i][j].text = ""
-                } else {
-                    self.boardTextField[i][j].text = String(self.originBoard[i][j])
-                }
             }
         }
     }
@@ -116,20 +124,5 @@ class SudokuView: UIView {
                 }
             }
         }
-    }
-    
-    func new() {
-        self.originBoard = [
-            [0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        ]
-        self.reset()
     }
 }

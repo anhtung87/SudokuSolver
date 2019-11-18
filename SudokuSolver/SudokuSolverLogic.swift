@@ -26,6 +26,18 @@ class SudokuSolver {
     var columnIndex: Int
     var number: Int
     
+    var defaultBoard: [[Int]] = [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    ]
+    
     var steps: [Step] = []
     var indexStep: Int
     
@@ -116,6 +128,9 @@ class SudokuSolver {
     
     func reset() {
         self.indexStep = 0
+        self.board = self.defaultBoard
+        self.steps = []
+        
     }
     
     func next() -> Step? {

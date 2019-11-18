@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     }
     
     func addBoardToUIView() {
-        self.sudokuView.new()
+        self.sudokuView.reset()
     }
     
     @IBAction func onPress(_ sender: Any) {
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
             sudoku.addBoard(board: self.sudokuView.originBoard)
             let _: Bool = self.sudoku.solve()
             self.timer = Timer.scheduledTimer(
-                timeInterval: 0.1, target: self, selector: #selector(runTimer), userInfo: nil, repeats: true)
+                timeInterval: 0.05, target: self, selector: #selector(runTimer), userInfo: nil, repeats: true)
         } else if self.startButton.titleLabel?.text == "Reset" {
             self.timer.invalidate()
             self.sudokuView.reset()
